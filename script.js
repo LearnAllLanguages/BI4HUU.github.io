@@ -40,30 +40,3 @@ function next() {
 	setTimeout(() => nextAuto(), 8);setTimeout(() => f3(), 88);
 	clearIntervalMini();
 };
-function nextUniversal(nNS) {
-	
-};
-function fS1() {	
-	setTimeout(() => {
-		numberNextSlide = 1;
-		s1 = document.getElementById(`slide${numberNextSlide}`);
-		zI++;
-		s1.style.cssText="transition: 'left 0s';left: 800px;";s1.style.zIndex = `${zI}`;
-		if (numberNextSlide == numberBeakSlide) {} else {numberBeakSlide++;s2.style.cssText="transition: 'left 0s';left: 0px;";console.log("!");s2.style.zIndex = `${zI}`}; 
-	}, 8);
-	setTimeout(() => {
-		s1.style.transition = "left 1.8s";
-		s1.style.left = "0px";
-		if (numberNextSlide == numberBeakSlide) {} else {s2.style.cssText="transition: 'left .8s';left: -800px;";console.log("!");};	
-		clearIntervalMini();
-	}, 88);
-};
-function fS2() {
-	
-};
-function fS3() {
-	
-};
-function fS4() {
-	if (true) {} else {}
-};
