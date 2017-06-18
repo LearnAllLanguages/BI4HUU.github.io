@@ -83,20 +83,14 @@ function nextBack(nNSU) {
 		zI++;
 	};
 };
-function f3B() {// ______________________________ ________
+function f3B() {
 	s1.style.transition = "left .8s cubic-bezier(.35,.47,.93,.92)";
 	s1.style.left = "0px"
 	s2.style.transition = "left .8s cubic-bezier(.35,.47,.93,.92)";
 	s2.style.left = " 800px"
 };
-function lS() {// ______________________________ __________
+function lS() {
 		setTimeout(() => nextBack(), 8); 
 		setTimeout(() => f3B(), 88);
 		clearIntervalMini();
 };  
-// function fS3() {
-	
-// };
-// function fS4() {
-// 	if (true) {} else {}
-// }; 
