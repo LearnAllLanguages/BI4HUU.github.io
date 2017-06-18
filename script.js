@@ -42,46 +42,58 @@ function next() {
 	setTimeout(() => nextAuto(), 8);setTimeout(() => f3(), 88);
 	clearIntervalMini();
 };
-// function nextUniversal(nNS) {
-	
-// };
+function nextAuto1(nNSU) {
+	numberNextSlide=nNSU;
+	s2 = s1;
+	s1 = document.getElementById(`slide${numberNextSlide}`)
+	s1.style.cssText="transition: 'left 0s';left: 800px;";s1.style.zIndex = `${zI}`;
+	s2.style.cssText="transition: 'left 0s';left: 0px;";s2.style.zIndex = `${zI}`;
+	zI++;
+};
 function fS1(nNSU) {
 	if (numberNextSlide == nNSU) {	
 		clearIntervalMini();	
-	} else {
-		setTimeout(() => nextAuto1(), 8); 
+	} else { if (numberNextSlide < nNSU) {
+		setTimeout(() => nextAuto1(nNSU), 8); 
 		setTimeout(() => f3(), 88);
-		function nextAuto1() {
-			numberNextSlide=nNSU;
-			s2 = s1;
-			s1 = document.getElementById(`slide${numberNextSlide}`)
-			s1.style.cssText="transition: 'left 0s';left: 800px;";s1.style.zIndex = `${zI}`;
-			s2.style.cssText="transition: 'left 0s';left: 0px;";s2.style.zIndex = `${zI}`;
-			zI++;
-		};
 		clearIntervalMini();
+		} else {
+			setTimeout(() => nextBack(nNSU), 8); 
+			setTimeout(() => f3B(), 88);
+			clearIntervalMini();
+		};
 	};
+};
+function nextBack(nNSU) {
+	if (nNSU == undefined) {
+		numberNextSlide--;
+		if (numberNextSlide==0) {numberNextSlide=4};
+		s2 = s1;
+		s1 = document.getElementById(`slide${numberNextSlide}`);
+		s1.style.cssText="transition: 'left 0s';left: -800px;";s1.style.zIndex = `${zI}`;
+		s2.style.cssText="transition: 'left 0s';left: 0px;";s2.style.zIndex = `${zI}`;
+		zI++;
+	} else {
+		numberNextSlide = nNSU;
+		if (numberNextSlide==0) {numberNextSlide=4};
+		s2 = s1;
+		s1 = document.getElementById(`slide${numberNextSlide}`);
+		s1.style.cssText="transition: 'left 0s';left: -800px;";s1.style.zIndex = `${zI}`;
+		s2.style.cssText="transition: 'left 0s';left: 0px;";s2.style.zIndex = `${zI}`;
+		zI++;
+	};
+};
+function f3B() {// ______________________________ ________
+	s1.style.transition = "left .8s cubic-bezier(.35,.47,.93,.92)";
+	s1.style.left = "0px"
+	s2.style.transition = "left .8s cubic-bezier(.35,.47,.93,.92)";
+	s2.style.left = " 800px"
 };
 function lS() {// ______________________________ __________
 		setTimeout(() => nextBack(), 8); 
 		setTimeout(() => f3B(), 88);
-		function nextBack() {
-			numberNextSlide--;
-			if (numberNextSlide==0) {numberNextSlide=4};
-			s2 = s1;
-			s1 = document.getElementById(`slide${numberNextSlide}`);
-			s1.style.cssText="transition: 'left 0s';left: -800px;";s1.style.zIndex = `${zI}`;
-			s2.style.cssText="transition: 'left 0s';left: 0px;";s2.style.zIndex = `${zI}`;
-			zI++;
-		};
-		function f3B() {
-			s1.style.transition = "left .8s cubic-bezier(.35,.47,.93,.92)";
-			s1.style.left = "0px"
-			s2.style.transition = "left .8s cubic-bezier(.35,.47,.93,.92)";
-			s2.style.left = " 800px"
-		};
 		clearIntervalMini();
-	};  
+};  
 // function fS3() {
 	
 // };
