@@ -9,7 +9,7 @@ body {
 
 .wrapperSpanSlide {
   display: flex;
-  height: 250px;
+  height: 100%;
   width: 100%;
   background-color: #333;
   padding: 0;
