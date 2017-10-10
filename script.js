@@ -1,5 +1,5 @@
 let time = 4000;
-let speed = 2.8;
+let speed = 0.8;
 var numberNextSlide = 1;  // Номер наступного слайда
 var numberBeakSlide = 4; // Номер основного слайда
 var numberBackSlide;     // Номер попереднього слайда
