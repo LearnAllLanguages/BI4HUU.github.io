@@ -4,14 +4,11 @@
     <meta charset="UTF-8"/>
     <title></title>
   </head>
-  <body>
-    <div class="wrapperSpanSlide" id="wrapperSpanSlide"><span id="slide2"></span><span id="slide3"></span><span id="slide4"></span><span id="slide1"></span></div>
+  <body onresize="document.getElementById('wrapperSpanSlide').style.height = `${document.getElementById('wrapperSpanSlide').offsetWidth/1.8}px`">
+    <div class="wrapperSpanSlide" id="wrapperSpanSlide"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="wrapperInputSlide">
       <input class="inputSlide" type="button" value="back" onclick="lS()"/>
-      <input class="inputSlide" type="button" value="1" onclick="fS1(1)"/>
-      <input class="inputSlide" type="button" value="2" onclick="fS1(2)"/>
-      <input class="inputSlide" type="button" value="3" onclick="fS1(3)"/>
-      <input class="inputSlide" type="button" value="4" onclick="fS1(4)"/>
+      <div class="wrapInputNumber" id="wIN"></div>
       <input class="inputSlide" type="button" value="next" onclick="next()"/>
     </div>
   </body>

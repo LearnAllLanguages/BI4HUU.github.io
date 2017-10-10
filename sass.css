@@ -40,6 +40,9 @@ body {
 .inputSlide:visited {
   border: none; }
 
+.wrapInputNumber {
+  display: flex; }
+
 #slide1 {
   background-image: url("1.jpg"); }
 
@@ -51,3 +54,9 @@ body {
 
 #slide4 {
   background-image: url("4.jpg"); }
+
+#slide5 {
+  background-image: url("5.jpg"); }
+
+#slide6 {
+  background-image: url("6.jpg"); }
