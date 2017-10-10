@@ -1,5 +1,5 @@
 let time = 4000;
-let speed = 0.8;
+let speed = .9;
 var numberNextSlide = 1;  // Номер наступного слайда
 var numberBeakSlide = 4; // Номер основного слайда
 var numberBackSlide;     // Номер попереднього слайда
@@ -7,10 +7,20 @@ var zI = 1;                 // z-index
 function Id(e) {return document.getElementById(e)};
 var s1 = Id(`slide${numberNextSlide}`);
 var s2 = Id(`slide${numberBeakSlide}`); 
+
+function go(e) {
+	e  == 'forward' ? e = " -100%" : e = " 100%"
+	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
+	s1.style.left = "0%";
+	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
+	s2.style.left = e;		
+};
+
 var setI = setInterval(() => {
 	setTimeout(() => nextAuto(), 8);
-	setTimeout(() => f3(), 88);
+	setTimeout(() => go('forward'), 88); // forward - вперед
 }, time);setI;
+
 function nextAuto() {
 	numberNextSlide++;
 	numberBeakSlide = numberNextSlide-1;
@@ -22,22 +32,17 @@ function nextAuto() {
 	s2.style.cssText="transition: 'left 0s';left: 0%;";s2.style.zIndex = `${zI}`;
 	zI++;
 }; 
-function f3() {
-	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	s1.style.left = "0%";
-	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	s2.style.left = "-100%";
-};
+
 function clearIntervalMini() {
 	clearInterval(setI);
 	setI = setInterval(() => {
 		setTimeout(() => nextAuto(), 8);
-		setTimeout(() => f3(), 88);
+		setTimeout(() => go('forward'), 88);
 	}, time);
 	setI;
 };
 function next() {
-	setTimeout(() => nextAuto(), 8);setTimeout(() => f3(), 88);
+	setTimeout(() => nextAuto(), 8);setTimeout(() => go('forward'), 88);
 	clearIntervalMini();
 };
 function nextAuto1(nNSU) {
@@ -53,11 +58,11 @@ function fS1(nNSU) {
 		clearIntervalMini();	
 	} else { if (numberNextSlide < nNSU) {
 		setTimeout(() => nextAuto1(nNSU), 8); 
-		setTimeout(() => f3(), 88);
+		setTimeout(() => go('forward'), 88);
 		clearIntervalMini();
 		} else {
 			setTimeout(() => nextBack(nNSU), 8); 
-			setTimeout(() => f3B(), 88);
+			setTimeout(() => go(), 88);
 			clearIntervalMini();
 		};
 	};
@@ -81,15 +86,9 @@ function nextBack(nNSU) {
 		zI++;
 	};
 };
-function f3B() {
-	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	s1.style.left = "0%";
-	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	s2.style.left = " 100%";
-};
 function lS() {
 		setTimeout(() => nextBack(), 8); 
-		setTimeout(() => f3B(), 88);
+		setTimeout(() => go(), 88);
 		clearIntervalMini();
 };  
 
@@ -113,3 +112,15 @@ function lS() {
 // var slide2 = document.getElementById('slide2');
 // var slide3 = document.getElementById('slide3');
 // var slide4 = document.getElementById('slide4');
+// function f3() {
+// 	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
+// 	s1.style.left = "0%";
+// 	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
+// 	s2.style.left = "-100%";
+// };
+// function f3B() {
+// 	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
+// 	s1.style.left = "0%";
+// 	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
+// 	s2.style.left = " 100%";
+// };
