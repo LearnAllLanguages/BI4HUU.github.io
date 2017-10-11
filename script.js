@@ -1,10 +1,15 @@
-let time = 4000;
-let speed = .9;
+let time = 4000; // Пауза між кадрами (мілісек)
+let speed = .9;  // скорость листання (сек)
 function Id(e) {return document.getElementById(e)};
 function CE(e) {return document.createElement(e)};
 let quantity = document.getElementsByClassName('wrapperSpanSlide')[0].childNodes;
-let quantityLength = quantity.length;
-
+let quantityLength = quantity.length; // Кількість слайдів
+var numberNextSlide = quantityLength;  // Номер наступного слайда
+var numberBeakSlide = quantityLength-1; // Номер основного слайда
+var numberBackSlide;     // Номер попереднього слайда
+var zI = 1;                 // z-index
+var s1 = Id(`slide${numberNextSlide}`);
+var s2 = Id(`slide${numberBeakSlide}`); 
 for (let i = 0; i < quantity.length; i++) {
 	quantity[i].id = `slide${i+1}`;
 	let input = CE('input');
@@ -12,60 +17,43 @@ for (let i = 0; i < quantity.length; i++) {
 		input.type="button";
 		input.value=`${i+1}`;
 		input.setAttribute('onclick', `fS1(${i+1})`);
-	document.getElementById('wIN').appendChild(input);
-};
-var numberNextSlide = quantityLength;  // Номер наступного слайда
-var numberBeakSlide = quantityLength-1; // Номер основного слайда
-var numberBackSlide;     // Номер попереднього слайда
-var zI = 1;                 // z-index
-var s1 = Id(`slide${numberNextSlide}`);
-var s2 = Id(`slide${numberBeakSlide}`); 
-
+	Id('wIN').appendChild(input);	};
+var setI = setInterval(() => {
+	nextAuto();
+	setTimeout(() => go('forward'), 88); // forward - вперед
+}, time);setI;
 function go(e) {
 	e  == 'forward' ? e = " -100%" : e = " 100%"
 	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
 	s1.style.left = "0%";
 	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	s2.style.left = e;		
-};
-
-var setI = setInterval(() => {
-	setTimeout(() => nextAuto(), 8);
-	setTimeout(() => go('forward'), 88); // forward - вперед
-}, time);setI;
-
+	s2.style.left = e;	};
+function beforeGo(e = '') {
+	s1 = Id(`slide${numberNextSlide}`);
+	s1.style.cssText=`transition: 'left 0s';left: ${e}100%;`;s1.style.zIndex = `${zI}`;
+	s2.style.cssText="transition: 'left 0s';left: 0%;";s2.style.zIndex = `${zI}`;
+	zI++;	};
 function nextAuto() {
 	numberNextSlide++;
 	numberBeakSlide = numberNextSlide-1;
 	if (numberBeakSlide == 0) {numberBeakSlide = quantityLength};
-	if(numberNextSlide > quantityLength){numberNextSlide = 1};
-	s1 = Id(`slide${numberNextSlide}`);
+	if (numberNextSlide > quantityLength){numberNextSlide = 1};
 	s2 = Id(`slide${numberBeakSlide}`); 
-	s1.style.cssText="transition: 'left 0s';left: 100%;";s1.style.zIndex = `${zI}`;
-	s2.style.cssText="transition: 'left 0s';left: 0%;";s2.style.zIndex = `${zI}`;
-	zI++;
-}; 
-
+	beforeGo(); }; 
 function clearIntervalMini() {
 	clearInterval(setI);
 	setI = setInterval(() => {
-		setTimeout(() => nextAuto(), 8);
+		nextAuto();
 		setTimeout(() => go('forward'), 88);
 	}, time);
-	setI;
-};
+	setI;	};
 function next() {
 	setTimeout(() => nextAuto(), 8);setTimeout(() => go('forward'), 88);
-	clearIntervalMini();
-};
+	clearIntervalMini();	};
 function nextAuto1(nNSU) {
 	numberNextSlide=nNSU;
 	s2 = s1;
-	s1 = Id(`slide${numberNextSlide}`);
-	s1.style.cssText="transition: 'left 0s';left: 100%;";s1.style.zIndex = `${zI}`;
-	s2.style.cssText="transition: 'left 0s';left: 0%;";s2.style.zIndex = `${zI}`;
-	zI++;
-};
+	beforeGo();		};
 function fS1(nNSU) {
 	if (numberNextSlide == nNSU) {	
 		clearIntervalMini();	
@@ -76,64 +64,18 @@ function fS1(nNSU) {
 		} else {
 			setTimeout(() => nextBack(nNSU), 8); 
 			setTimeout(() => go(), 88);
-			clearIntervalMini();
-		};
-	};
-};
+			clearIntervalMini();	};	};	};
 function nextBack(nNSU) {
 	if (nNSU == undefined) {
 		numberNextSlide--;
 		if (numberNextSlide==0) {numberNextSlide=quantityLength};
-		s2 = s1;
-		s1 = Id(`slide${numberNextSlide}`);
-		s1.style.cssText="transition: 'left 0s';left: -100%;";s1.style.zIndex = `${zI}`;
-		s2.style.cssText="transition: 'left 0s';left: 0%;";s2.style.zIndex = `${zI}`;
-		zI++;
 	} else {
 		numberNextSlide = nNSU;
 		if (numberNextSlide==0) {numberNextSlide=quantityLength};
+	};	
 		s2 = s1;
-		s1 = Id(`slide${numberNextSlide}`);
-		s1.style.cssText="transition: 'left 0s';left: -100%;";s1.style.zIndex = `${zI}`;
-		s2.style.cssText="transition: 'left 0s';left: 0%;";s2.style.zIndex = `${zI}`;
-		zI++;
-	};
-};
+		beforeGo('-');	};
 function lS() {
 		setTimeout(() => nextBack(), 8); 
 		setTimeout(() => go(), 88);
-		clearIntervalMini();
-};  
-//v
-	//---------------
-	// function nextAuto(nNSU = numberNextSlide++) {
-	// 	numberBeakSlide = numberNextSlide;
-	// 	numberNextSlide=nNSU;
-	// 	if (numberBeakSlide == 0) {numberBeakSlide = 4};
-	// 	if(numberNextSlide == 5){numberNextSlide = 1};
-	// 	s1 = document.getElementById(`slide${numberNextSlide}`);
-	// 	s2 = document.getElementById(`slide${numberBeakSlide}`); 
-	// 	s1.style.cssText="transition: 'left 0s';left: 100%;";s1.style.zIndex = `${zI}`;
-	// 	s2.style.cssText="transition: 'left 0s';left: 0%;";s2.style.zIndex = `${zI}`;
-	// 	zI++;
-	// }; 
-	      
-	//---------------
-	// let Id = ['slide1', 'slide2', 'slide3', 'slide4'];
-	// for (let i = 0; i < Id.length; i++) {eval(`var ${Id[i]} = document.getElementById(${Id[i]})`)};
-	// var slide1 = document.getElementById('slide1');
-	// var slide2 = document.getElementById('slide2');
-	// var slide3 = document.getElementById('slide3');
-	// var slide4 = document.getElementById('slide4');
-	// function f3() {
-	// 	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	// 	s1.style.left = "0%";
-	// 	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	// 	s2.style.left = "-100%";
-	// };
-	// function f3B() {
-	// 	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	// 	s1.style.left = "0%";
-	// 	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	// 	s2.style.left = " 100%";
-	// };
+		clearIntervalMini();	};  
