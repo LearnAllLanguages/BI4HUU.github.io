@@ -1,0 +1,22 @@
+html
+	head
+		meta(charset="UTF-8")
+		title
+	//- body(onresize="document.getElementById('wrapperSpanSlide').style.height = `${document.getElementById('wrapperSpanSlide').offsetWidth/1.7}px`")
+	body
+		div.wrapperSpanSlide#wrapperSpanSlide
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+		div.wrapperInputSlide
+			input.inputSlide(type="button" value="back" onclick="fS1()")
+			#wIN
+			input.inputSlide(type="button" value="next" onclick="nextAuto()")
+		
+	link(href='sass.css' rel='stylesheet' type='text/css')
+	script(src="script.js")
