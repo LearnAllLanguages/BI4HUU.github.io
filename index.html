@@ -4,12 +4,12 @@
     <meta charset="UTF-8"/>
     <title></title>
   </head>
-  <body onresize="document.getElementById('wrapperSpanSlide').style.height = `${document.getElementById('wrapperSpanSlide').offsetWidth/1.7}px`">
+  <body>
     <div class="wrapperSpanSlide" id="wrapperSpanSlide"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="wrapperInputSlide">
-      <input class="inputSlide" type="button" value="back" onclick="lS()"/>
+      <input class="inputSlide" type="button" value="back" onclick="fS1()"/>
       <div id="wIN"></div>
-      <input class="inputSlide" type="button" value="next" onclick="next()"/>
+      <input class="inputSlide" type="button" value="next" onclick="nextAuto()"/>
     </div>
   </body>
   <link href="sass.css" rel="stylesheet" type="text/css"/>
