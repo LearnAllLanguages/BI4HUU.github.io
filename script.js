@@ -22,24 +22,34 @@ var setI = setInterval(() => {
 	nextAuto();
 	setTimeout(() => go('forward'), 88); // forward - вперед
 }, time);setI;
+
 function go(e) {
 	e  == 'forward' ? e = " -100%" : e = " 100%"
 	s1.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
 	s1.style.left = "0%";
 	s2.style.transition = `left ${speed}s cubic-bezier(.35,.47,.93,.92)`;
-	s2.style.left = e;	};
+	s2.style.left = e;	
+};
 function beforeGo(e = '') {
 	s1 = Id(`slide${numberNextSlide}`);
 	s1.style.cssText=`transition: 'left 0s';left: ${e}100%;`;s1.style.zIndex = `${zI}`;
 	s2.style.cssText="transition: 'left 0s';left: 0%;";s2.style.zIndex = `${zI}`;
-	zI++;	};
-function nextAuto() {
-	numberNextSlide++;
-	numberBeakSlide = numberNextSlide-1;
-	if (numberBeakSlide == 0) {numberBeakSlide = quantityLength};
-	if (numberNextSlide > quantityLength){numberNextSlide = 1};
-	s2 = Id(`slide${numberBeakSlide}`); 
+	zI++;	
+};
+
+function nextAuto(nNSU) {
+	if (nNSU) {
+		numberNextSlide=nNSU;
+		s2 = s1;
+	} else {
+		numberNextSlide++;
+		numberBeakSlide = numberNextSlide-1;
+		if (numberBeakSlide == 0) {numberBeakSlide = quantityLength};
+		if (numberNextSlide > quantityLength){numberNextSlide = 1};
+		s2 = Id(`slide${numberBeakSlide}`); 
+	};
 	beforeGo(); }; 
+	
 function clearIntervalMini() {
 	clearInterval(setI);
 	setI = setInterval(() => {
@@ -48,19 +58,16 @@ function clearIntervalMini() {
 	}, time);
 	setI;	};
 function next() {
-	setTimeout(() => nextAuto(), 8);setTimeout(() => go('forward'), 88);
+	nextAuto();setTimeout(() => go('forward'), 88);
 	clearIntervalMini();	};
-function nextAuto1(nNSU) {
-	numberNextSlide=nNSU;
-	s2 = s1;
-	beforeGo();		};
 function fS1(nNSU) {
 	if (numberNextSlide == nNSU) {	
 		clearIntervalMini();	
-	} else { if (numberNextSlide < nNSU) {
-		setTimeout(() => nextAuto1(nNSU), 8); 
-		setTimeout(() => go('forward'), 88);
-		clearIntervalMini();
+	} else { 
+		if (numberNextSlide < nNSU) {
+			setTimeout(() => nextAuto(nNSU), 8); 
+			setTimeout(() => go('forward'), 88);
+			clearIntervalMini();
 		} else {
 			setTimeout(() => nextBack(nNSU), 8); 
 			setTimeout(() => go(), 88);
@@ -73,9 +80,22 @@ function nextBack(nNSU) {
 		numberNextSlide = nNSU;
 		if (numberNextSlide==0) {numberNextSlide=quantityLength};
 	};	
-		s2 = s1;
-		beforeGo('-');	};
+	s2 = s1;
+	beforeGo('-');	};
 function lS() {
 		setTimeout(() => nextBack(), 8); 
 		setTimeout(() => go(), 88);
 		clearIntervalMini();	};  
+
+
+// function nextAuto() {
+// 	numberNextSlide++;
+// 	numberBeakSlide = numberNextSlide-1;
+// 	if (numberBeakSlide == 0) {numberBeakSlide = quantityLength};
+// 	if (numberNextSlide > quantityLength){numberNextSlide = 1};
+// 	s2 = Id(`slide${numberBeakSlide}`); 
+// 	beforeGo(); }; 
+// function nextAuto1(nNSU) {
+// 	numberNextSlide=nNSU;
+// 	s2 = s1;
+// 	beforeGo();		};
