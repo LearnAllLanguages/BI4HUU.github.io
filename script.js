@@ -1,4 +1,6 @@
-let time = 4000; // Пауза між кадрами (мілісек)
+// добавить автоховер на кнопки
+
+let time = 8000; // Пауза між кадрами (мілісек)
 let speed = 1;  // скорость листання (сек)
 function Id(e) {return document.getElementById(e)};
 function CE(e) {return document.createElement(e)};
@@ -6,7 +8,6 @@ let quantity = document.getElementsByClassName('wrapperSpanSlide')[0].childNodes
 let quantityLength = quantity.length; // Кількість слайдів
 var numberNextSlide = quantityLength;  // Номер наступного слайда
 var numberBeakSlide = quantityLength-1; // Номер основного слайда
-// var numberBackSlide = quantityLength-2;     // Номер попереднього слайда
 var zI = 1;                 // z-index
 var s1 = Id(`slide${numberNextSlide}`);
 var s2 = Id(`slide${numberBeakSlide}`); 
@@ -21,9 +22,7 @@ for (let i = 0; i < quantity.length; i++) {
 var setI = setInterval(() => {nextAuto();}, time);//setI;
 function beforeGo(e) {
 	s1 = Id(`slide${numberNextSlide}`);
-	// s2 = Id(`slide${numberNextSlide-1}`);
-	if (s2 == null) {s2 = Id(`slide${numberBeakSlide}`)};
-	console.log(s1);	console.log(s2);
+	if (s2 == null) {s2 = Id(`slide${quantityLength}`)};
 	s1.style.cssText=`transition: 'left 0s';left: ${e}100%;`;
 	s1.style.zIndex = `${zI}`;
 	s2.style.cssText=`transition: 'left 0s';left: 0%;`;
@@ -78,3 +77,15 @@ function clearIntervalMini() {
 		nextAuto();
 	}, time);
 	setI;	};
+var WrapFullScreen = Id("WrapFullScreen");
+function toggleFullScreen() {
+	if (WrapFullScreen.mozRequestFullScreen) {
+	WrapFullScreen.mozRequestFullScreen();
+		if (WrapFullScreen.mozRequestFullScreen()) {} else {document.mozCancelFullScreen()}
+	};
+	 // else document.exitFullscreen();
+	
+	if (WrapFullScreen.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT)) {
+	WrapFullScreen.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+} else {document.webkitCancelFullScreen()}
+};
