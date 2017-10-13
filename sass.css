@@ -19,12 +19,24 @@ body {
     width: 100%;
     background-size: cover; }
 
+.controlPanel {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 8888;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
 .fullScreenButton {
   position: absolute;
   z-index: 8888;
   top: 0;
   right: 0;
-  background: blue;
   font: 55px GOST Type BU;
   box-sizing: border-box;
   padding: 0.2em 0.4em 0.2em 0.4em;
@@ -36,27 +48,58 @@ body {
   .fullScreenButton:hover {
     opacity: 1; }
 
+.inputSlideBig {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  height: 70%;
+  width: 30%;
+  font: 188px GOST Type BU;
+  color: #444;
+  background: rgba(88, 88, 88, 0.3);
+  border: 1px rgba(88, 88, 88, 0.2) solid;
+  text-shadow: 0 0 1px rgba(250, 250, 250, 0.6);
+  opacity: 0.08; }
+  .inputSlideBig:hover {
+    opacity: 1; }
+
+.inputSlideBigLeft {
+  left: 0; }
+
+.inputSlideBigRight {
+  right: 0; }
+
+.inputSlideBigPause {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 .wrapperInputSlide {
   position: absolute;
-  transform: translateY(-100%);
+  bottom: 0;
   display: flex;
   justify-content: center;
   width: 100%;
-  z-index: 8888; }
+  z-index: 8888;
+  opacity: 0.1; }
+  .wrapperInputSlide:hover {
+    opacity: 1; }
 
 .inputSlide {
-  background: rgba(88, 88, 88, 0.2);
+  background: rgba(88, 88, 88, 0.3);
   padding: 22px;
   border: none;
   color: #444;
   font: 38px GOST Type BU; }
   .inputSlide:hover {
-    background: rgba(88, 88, 88, 0.3);
+    background: rgba(88, 88, 88, 0.5);
+    box-sizing: border-box;
     border: 1px rgba(88, 88, 88, 0.2) solid;
     text-shadow: 0 0 1px rgba(250, 250, 250, 0.6); }
 
 #wIN {
-  display: flex; }
+  display: flex;
+  flex-wrap: no-wrap; }
 
 #slide1 {
   background-image: url("1.jpg"); }

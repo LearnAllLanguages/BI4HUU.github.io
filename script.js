@@ -4,14 +4,15 @@ let time = 8000; // Пауза між кадрами (мілісек)
 let speed = 1;  // скорость листання (сек)
 function Id(e) {return document.getElementById(e)};
 function CE(e) {return document.createElement(e)};
+let WrapFullScreen = Id("WrapFullScreen");
 let quantity = document.getElementsByClassName('wrapperSpanSlide')[0].childNodes;
-let quantityLength = quantity.length; // Кількість слайдів
-var numberNextSlide = quantityLength;  // Номер наступного слайда
-var numberBeakSlide = quantityLength-1; // Номер основного слайда
-var zI = 1;                 // z-index
-var s1 = Id(`slide${numberNextSlide}`);
-var s2 = Id(`slide${numberBeakSlide}`); 
-for (let i = 0; i < quantity.length; i++) {
+let quantityLength = quantity.length-1; // Кількість слайдів
+let numberNextSlide = quantityLength;  // Номер наступного слайда
+let numberBeakSlide = quantityLength-1; // Номер основного слайда
+let zI = 1;                 // z-index
+let s1 = Id(`slide${numberNextSlide}`);
+let s2 = Id(`slide${numberBeakSlide}`); 
+for (let i = 0; i < quantityLength; i++) {
 	quantity[i].id = `slide${i+1}`;
 	let input = CE('input');
 		input.className = "inputSlide";
@@ -19,7 +20,7 @@ for (let i = 0; i < quantity.length; i++) {
 		input.value=`${i+1}`;
 		input.setAttribute('onclick', `fS1(${i+1})`);
 	Id('wIN').appendChild(input);	};
-var setI = setInterval(() => {nextAuto();}, time);//setI;
+let setI = setInterval(() => {nextAuto();}, time);
 function beforeGo(e) {
 	s1 = Id(`slide${numberNextSlide}`);
 	if (s2 == null) {s2 = Id(`slide${quantityLength}`)};
@@ -68,8 +69,7 @@ function fS1(nNSU) {
 			s2 = s1;
 			beforeGo('-');
 		};
-	};	
-};
+	};};
 
 function clearIntervalMini() {
 	clearInterval(setI);
@@ -77,15 +77,24 @@ function clearIntervalMini() {
 		nextAuto();
 	}, time);
 	setI;	};
-var WrapFullScreen = Id("WrapFullScreen");
+function pause() {
+	clearInterval(setI);
+}
 function toggleFullScreen() {
 	if (WrapFullScreen.mozRequestFullScreen) {
 	WrapFullScreen.mozRequestFullScreen();
 		if (WrapFullScreen.mozRequestFullScreen()) {} else {document.mozCancelFullScreen()}
-	};
-	 // else document.exitFullscreen();
-	
+	}; // else document.exitFullscreen();
 	if (WrapFullScreen.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT)) {
 	WrapFullScreen.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-} else {document.webkitCancelFullScreen()}
-};
+} else {document.webkitCancelFullScreen()}};
+// WrapFullScreen.addEventListener('mousedown', function(event) {
+//     alert('mousedown');
+//         }, false);
+// WrapFullScreen.addEventListener('keydown', function(event) {
+//     alert('keydown');
+//         }, false);
+// вправо 39
+// лево 37
+// верх 38
+// низ 40

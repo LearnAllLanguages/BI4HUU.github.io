@@ -2,9 +2,8 @@ html
 	head
 		meta(charset="UTF-8")
 		title
-	//- body(onresize="document.getElementById('wrapperSpanSlide').style.height = `${document.getElementById('wrapperSpanSlide').offsetWidth/1.7}px`")
-	body
-		div.wrapperSpanSlide#wrapperSpanSlide
+	body#WrapFullScreen
+		div.wrapperSpanSlide
 			span
 			span
 			span
@@ -13,10 +12,22 @@ html
 			span
 			span
 			span
-		div.wrapperInputSlide
-			input.inputSlide(type="button" value="back" onclick="fS1()")
-			#wIN
-			input.inputSlide(type="button" value="next" onclick="nextAuto()")
-		
-	link(href='sass.css' rel='stylesheet' type='text/css')
+			span
+			span
+			span
+			span
+			span
+			span
+			.controlPanel
+				.fullScreenButton(onclick='toggleFullScreen()') < >
+				input.inputSlideBigLeft.inputSlideBig(type="button" value="<" onclick="fS1()")
+				input.inputSlideBigPause.inputSlideBig(type="button" value="| |" onclick="pause()")
+				input.inputSlideBigRight.inputSlideBig(type="button" value=">" onclick="nextAuto()")
+				div.wrapperInputSlide
+					input.inputSlide(type="button" value="<" onclick="fS1()")
+					#wIN
+					input.inputSlide(type="button" value=">" onclick="nextAuto()")
+
+
 	script(src="script.js")
+	link(href='sass.css' rel='stylesheet' type='text/css')
