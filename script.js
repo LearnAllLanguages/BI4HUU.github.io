@@ -88,13 +88,14 @@ function toggleFullScreen() {
 	if (WrapFullScreen.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT)) {
 	WrapFullScreen.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
 } else {document.webkitCancelFullScreen()}};
-// WrapFullScreen.addEventListener('mousedown', function(event) {
-//     alert('mousedown');
-//         }, false);
-// WrapFullScreen.addEventListener('keydown', function(event) {
-//     alert('keydown');
-//         }, false);
-// вправо 39
-// лево 37
-// верх 38
-// низ 40
+WrapFullScreen.addEventListener('keydown', function(event) {
+    console.log(event.keyCode);
+    if (event.keyCode==39) {nextAuto()};
+    if (event.keyCode==37) {fS1()};
+    if (event.keyCode==38) {toggleFullScreen()};
+    if (event.keyCode==40) {toggleFullScreen()};
+    if (event.keyCode==32) {pause()};
+        }, false);
+function алерт(аргум) {
+	alert(аргум)
+}
