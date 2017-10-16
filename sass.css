@@ -37,14 +37,20 @@ body {
   z-index: 8888;
   top: 0;
   right: 0;
+  height: 15%;
+  width: 11%;
+  border-radius: 0 0 0 30%;
   font: 55px GOST Type BU;
   box-sizing: border-box;
   padding: 0.2em 0.4em 0.2em 0.4em;
   opacity: 0.08;
   color: #444;
-  background: rgba(88, 88, 88, 0.3);
+  background: rgba(88, 88, 88, 0.2);
   border: 1px rgba(88, 88, 88, 0.2) solid;
-  text-shadow: 0 0 1px rgba(250, 250, 250, 0.6); }
+  text-shadow: 0 0 2px rgba(250, 250, 250, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   .fullScreenButton:hover {
     opacity: 1; }
 
@@ -56,23 +62,30 @@ body {
   width: 30%;
   font: 188px GOST Type BU;
   color: #444;
-  background: rgba(88, 88, 88, 0.3);
+  background: rgba(88, 88, 88, 0.2);
   border: 1px rgba(88, 88, 88, 0.2) solid;
-  text-shadow: 0 0 1px rgba(250, 250, 250, 0.6);
+  text-shadow: 0 0 2px rgba(250, 250, 250, 0.5);
   opacity: 0.08; }
   .inputSlideBig:hover {
     opacity: 1; }
 
 .inputSlideBigLeft {
-  left: 0; }
+  left: 0;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%; }
 
 .inputSlideBigRight {
-  right: 0; }
+  right: 0;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%; }
 
 .inputSlideBigPause {
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 25%;
+  border-radius: 40%; }
 
 .wrapperInputSlide {
   position: absolute;
@@ -87,13 +100,12 @@ body {
 
 .inputSlide {
   background: rgba(88, 88, 88, 0.3);
-  padding: 22px;
-  border: none;
+  padding: 1vh 7vh;
+  border: 0;
   color: #444;
   font: 38px GOST Type BU; }
   .inputSlide:hover {
     background: rgba(88, 88, 88, 0.5);
-    box-sizing: border-box;
     border: 1px rgba(88, 88, 88, 0.2) solid;
     text-shadow: 0 0 1px rgba(250, 250, 250, 0.6); }
 
