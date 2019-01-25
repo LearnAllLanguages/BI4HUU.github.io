@@ -1,5 +1,5 @@
-let time = 8000; // Пауза між кадрами (мілісек)
-let speed = 1;  // скорость листання (сек)
+let time = 4000; // Пауза між кадрами (мілісек)
+let speed = 0.3;  // скорость листання (сек)
 function Id(e) {return document.getElementById(e)};
 function CE(e) {return document.createElement(e)};
 let quantity = document.getElementsByClassName('wrapperSpanSlide')[0].childNodes;
