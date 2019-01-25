@@ -1,0 +1,106 @@
+.logo
+	margin-right 10px
+	margin-bottom 8px
+	h1
+		margin 0
+		font-size 74px
+		font-weight 600
+		font-style normal
+		line-height 0.8
+		letter-spacing 1px
+		@media (min-width: 1000px)
+			font-size 76px
+		@media (min-width: 1050px)
+			font-size 78px
+		@media (min-width: 1200px)
+			font-size 80px
+	h2
+		margin 1px 0 0 0
+		font-size 14px
+		font-weight 600
+		font-style normal
+		line-height 1
+		letter-spacing 1px
+		@media (min-width: 1000px)
+			font-size 15px
+			margin 1px 0 0 0
+		@media (min-width: 1050px)
+			font-size 16px
+			margin 2px 0 0 0
+		@media (min-width: 1200px)
+			font-size 17px
+			margin 3px 0 0 0
+			
+header
+	color #ffffff
+	position relative
+	background colorRed
+	nav
+		display flex
+		flex-wrap no-wrap
+	nav a
+		display block
+		padding 0px 24px
+		font-size 16px
+		font-weight 600
+		font-style normal
+		line-height 100px
+		color #fff
+		cursor pointer
+		text-decoration none
+		@media (min-width: 810px)
+			font-size 15px
+			padding 0 24px
+		@media (min-width: 1000px)
+			font-size 17px
+			padding 0px 26px
+		@media (min-width: 1050px)
+			font-size 18px
+			padding 0px 28px
+		@media (min-width: 1200px)
+			font-size 20px
+			padding 0px 30px
+	nav a:hover,
+	nav .active
+		background colorDarkGray
+.burger
+	display none
+#checkbox_burder
+	display none
+@media (max-width: 830px)
+	label[for='checkbox_burder']
+		display: flex
+	.burger
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		cursor pointer
+		width 50px
+		margin 18px 0
+		background #fff
+	.burger i
+		display block
+		height 2px
+		width 18px
+		margin 2px
+		background colorRed
+	// header nav a
+	// 	display none
+	.wrap_nav
+		display none
+		position absolute
+		top 100%
+		right 0
+		left 0
+		margin-left 2%
+		margin-right 2%
+		width 96%
+		z-index 999999
+	.wrap_nav a
+		background colorGray
+		border-bottom 1px solid #000
+		line-height 2.5
+	#checkbox_burder:checked + .wrap_nav
+		display block
+	

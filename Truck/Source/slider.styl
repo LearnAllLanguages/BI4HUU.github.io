@@ -1,0 +1,60 @@
+*
+	padding: 0
+	margin: 0
+
+.Slider
+	position: relative
+	// height: 80%
+	width: 100%
+	// overflow: hidden
+
+.slide
+	position: absolute
+	// height: 100%
+	// width: 100%
+	// overflow hidden
+	img
+		display block
+		width 100%
+
+.slideText
+	position absolute
+	top 0
+	left 0
+	margin 8% 0 0 50%
+	width 45%
+	color #eee
+	font-size 30px
+	font-weight bold
+	@media (min-width: 640px)
+		font-size 35px
+		margin 10% 0 0 50%
+	@media (min-width: 768px)
+		font-size 38px
+		margin 11% 0 0 50%
+	@media (min-width: 992px)
+		font-size 55px
+	@media (min-width: 1200px)
+		font-size 65px
+
+.wrapButtonNumber
+	position: absolute
+	bottom: 50px
+	z-index: 8888
+	width: 100%
+	opacity: 1
+	display: flex
+	justify-content: center
+	flex-wrap: nowrap
+
+.buttonNumber
+	height: 28px
+	width: 28px
+	border-radius 50%
+	background: #eeeeee
+	margin: 8px
+	&:hover
+		background: #e11313
+
+.sliderButtonActive
+	background: #e11313
