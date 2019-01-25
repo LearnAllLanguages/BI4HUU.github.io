@@ -1,0 +1,338 @@
+html
+	head
+		link(href='style.css' rel='stylesheet' type='text/css')
+		meta(charset='utf8')
+	body
+		header.header.container
+			a.logo(href="#", title="title")
+				img(src="img/logo.svg", alt="logo")
+			.user-menu
+				a(href="#", title="title").leng
+					i.flagUA UA
+					i.arrow.icon
+				a(href="#", title="title").help.icon Help
+				a(href="#", title="title").like.icon
+				a(href="#", title="title").bell.icon
+				a(href="#", title="title").ak.icon Аккаунт
+				a(href="#", title="title").kart.icon Кошик
+
+				//-////////////////
+				//-NAV 1
+				//-////////////////
+
+		nav.nav1
+			.lBg
+			.wrapNav1Sub.wn1sb.container
+				//- mixin nav1Menu(a1)
+				.wrapNav1SubBlock.wN1SB1
+					a.a1(href="") CMS ШАБЛОНИ
+						i.arrow
+					#cN1S1.nav1Sub.container
+
+						mixin nav1Block(i, h4, p)
+							.Nav1SubEl
+								img(src=i)
+								h4= h4
+								p= p
+						+nav1Block("img/1.png", 'HTML шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+				.wrapNav1SubBlock.wN1SB2
+					a.a1(href="") ШАБЛОНИ САЙТІВ
+						i.arrow
+					#cN1S2.nav1Sub.container
+						+nav1Block("img/1.png", '2WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+				.wrapNav1SubBlock.wN1SB3
+					a.a1(href="") ІНТЕРНЕТ-МАГАЗИНИ
+						i.arrow
+					#cN1S3.nav1Sub.container
+						+nav1Block("img/1.png", '3WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+				.wrapNav1SubBlock.wN1SB4
+					a.a1(href="") КАТЕГОРІЇ
+						i.arrow
+					#cN1S4.nav1Sub.container
+						+nav1Block("img/1.png", '4WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+				.wrapNav1SubBlock.wN1SB5
+					a.a1(href="") ПЛАГІНИ
+						i.arrow
+					#cN1S5.nav1Sub.container
+						+nav1Block("img/1.png", '5WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+						+nav1Block("img/1.png", 'WordPress шаблони', 'Три причини використовувати WordPress: простота, надійність, швидкість.')
+				.wrapNav1SubBlock.wN1SB6
+					a.a1(href="") ПОСЛУГИ
+			.rBg
+					//-//////////////////////////////
+					//-NAV 2
+					//-////////////////////////////
+
+		nav.nav2
+			.wrapNav1Sub.container
+				mixin nav2Block(p1, p2, img, arr)
+					.wrapNav1SubBlock.wn2sb
+						a.a2(href="google.com")
+							img(src=img)
+							span.wrapTxtNav2
+								div.pr5= p1
+								div.pr5= p2
+						.nav2Sub
+							each val, index in arr
+								a(href=index)=  val
+				+nav2Block(' WordPress ', ' шаблони', "img/wp.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
+				+nav2Block(' HTML ', ' шаблони', "img/HTML.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
+				+nav2Block(' Joomla ', ' шаблони', "img/Joomla.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
+				+nav2Block(' PrestaShop ', ' шаблони', "img/PrestaShop.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
+				+nav2Block(' OpenCart ', ' шаблони', "img/OpenCart.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
+				+nav2Block(' Magento ', ' шаблони', "img/Magento.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
+				+nav2Block(' MotoCMS ', ' шаблони', "img/MotoCMS.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
+
+
+					//- ////////////////////////
+					//- SECT 1
+					//- ////////////////////////
+
+
+		section.bg1
+			.section1.container.block
+				h1 26 640 преміум шаблонів для створення<br> сайтів –<br> це ідеальний вибір для вашого бізнесу
+				.txtMini За 15 років ми допомогли понад 2 мільйонам підприємців створити зручні та красиві сайти на базі наших шаблонів.
+				.wrapInput
+					input.inputMain.inputTxt(type="text" placeholder="Введіть ключове слово")
+					input.inputMain.inputBtn(type="button", value="Знайти шаблон вашої мрії")
+				.wrapCategories
+					.itemCategories.img1 Бізнес та послуги
+					.itemCategories.img2 Дизайн та фотографія
+					.itemCategories.img3 Мода та краса
+					.itemCategories.img4 Спорт, туризм та подорожі
+					.itemCategories.img5 Нерухомість
+
+
+					//- ////////////////////////
+					//- SECT 2 MENU 3
+					//- ////////////////////////
+		
+
+		section.Bg2
+			.wrapSec1Head.container
+				input(type="radio" name="tabs" id="i1"  checked='checked')
+				.sec1Sub
+					mixin sect2menu3(s, i, h4, p, pc)
+						.wrapEl
+							.Nav2SubEl
+								a(href="#", title="title") 
+									img.img5_(src=s)
+								.wrapData
+									.left2
+										img(width='30px' src=i)
+										.wrapTxt
+											h4= h4
+											p= p
+									.like.icon-like
+								.wrapData.wrapDataMin
+									.wrapStar
+										i.stars
+										i.stars
+										i.stars
+										i.stars
+										i.stars
+									.price23= pc
+					+sect2menu3("img/img_5_1.jpg", "img/1.png", 'Tobacco1', '1Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_1.jpg", "img/1.png", 'Tobacco1', '1Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_1.jpg", "img/1.png", 'Tobacco1', '1Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_1.jpg", "img/1.png", 'Tobacco1', '1Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_1.jpg", "img/1.png", 'Tobacco1', '1Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_1.jpg", "img/1.png", 'Tobacco1', '1Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_1.jpg", "img/1.png", 'Tobacco1', '1Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_1.jpg", "img/1.png", 'Tobacco1', '1Адаптивний motocms', '53 $')
+				label#ii1(for="i1")
+					div.icon-tm.icon-rocket2 Популярні
+				input(type="radio" name="tabs" id="i2")
+				.sec1Sub
+					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
+				label#ii2(for="i2") 
+					div.icon-tm.icon-flag Нові
+				input(type="radio" name="tabs" id="i3")
+				.sec1Sub
+					+sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
+					+sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
+					//- +sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
+					//- +sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
+					//- +sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
+					//- +sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
+				label#ii3(for="i3")
+					div.icon-tm.icon-like Багатофункціональні
+
+
+							//-/////////////
+							//-SECT 5 X3
+							//-/////////////
+
+		section.container.wrapSec5.block
+			mixin block5(h4, p)
+				.block5
+					.icon5(class!=attributes.class)
+					h4= h4
+					p.txtMini= p
+			+block5('Безпечні платежі', 'Сплата шаблонів через популярні платіжні системи або за допомогою пластикових карт.')(class= 'iconPayment')
+			+block5('Продукт високої якості', 'Наші рішення розроблені професіоналами з досвідом роботи понад 8 років.')(class= 'iconQuality')
+			+block5('Повернення грошей протягом 14 днів', 'Ми повернемо гроші, якщо ви передумаєте купувати продукт.')(class= 'iconMoney')
+			+block5('Служба підтримки 24/7', 'Наші фахівці завжди готові допомогти вам у налаштуванні шаблону.')(class= 'iconImprove')
+			+block5('100% гарантія якості', 'Якщо ви не задоволені придбаним продуктом, ми поміняємо його на інший безкоштовно.')(class= 'iconLike')
+
+
+							//-/////////////
+							//-SECT 6
+							//-/////////////
+
+
+		section.posr
+			.wrapSlider6
+				.Slider
+					mixin slide(i, h, p)
+						div
+							img.imgSlide6(src=i, alt="")
+							.wrapSec6_2
+								.container.db
+									.m6slideTxtWrap
+										.h6_1_5= h
+										.p6= p
+					+slide("img/Review-1_new.png", 'Дмитро А.', 'Кілька місяців тому клієнт замовив мені сучасний і багатофункціональний сайт. Мій вибір впав на дизайни від TemplateMonster. Переглянув безліч рішень і зупинився на яскравішому. Дуже крутий шаблон з регулярними оновленнями!')
+					+slide("img/Review-2_new.png", 'Єлизавета', 'Я переглянула безліч різних шаблонів спортивних магазинів, але дизайн TemplateMonster підкорив мене. Якщо буде необхідно, придбаю ще кілька шаблонів у вас. Монстри, ви чудові! Даю 5 зірок!')
+					+slide("img/Review-3_new.png", 'Сергій K.', 'Одне задоволення працювати з шаблонами TemplateMonster. Якщо я знаю, що мені потрібно, маю своє бачення майбутнього сайту, то підібрати відповідне готове рішення з колекції TemplateMonster вже не становить великих труднощів.')
+					+slide("img/Review-4_new.png", 'Максим А.', 'Команда TemplateMonster розробила кращий WordPress шаблон на ринку. Я на 100% впевнений, що цей дизайн непоганий для всіх клієнтів нашої студії. Вже 5 років в своїй роботі використовуємо тільки продукти TM. Всім задоволені.')
+			.wrapSec6
+				.container.block.db
+					.h1 Ми зробили щасливими понад 4 мільйонів клієнтів
+					.wrapCustomers
+						mixin customer6(i, n, p)
+							.customersItems
+								.wrapCircle
+									img.imgItem6(src=i, alt="customers")
+									.txt6= n
+								.p6= p
+						+customer6('img/46.png', '46%', 'наших клієнтів зробили повторні покупки')
+						+customer6('img/38.png', '38%', 'наших клієнстворили свій перший сайт з нами')
+						+customer6('img/98.png', '98%', 'наших клієнтів залишилися задоволені нашою продукцією')
+						+customer6('img/21.png', '21%', 'наших відвідувачів придбали два і більше шаблонів')
+				.wrapPanelSlider.container
+					mixin nameSlide(i, n, p)
+						.itemReview(onclick!=attributes.onclick)
+							img.imgReview(src=i, alt="")
+							.wrapName
+								.h3Name6= n
+								.txtMini6= p
+					+nameSlide('img/6_1.png', 'Дмитро А.', 'Розробник')(onclick='verification(1)')
+					+nameSlide('img/6_2.png', 'Єлизавета', 'Власник магазину')(onclick='verification(2)')
+					+nameSlide('img/6_3.png', 'Сергій K.', 'Фінансовий Консультант')(onclick='verification(3)')
+					+nameSlide('img/6_4.png', 'Максим А.', 'Агентство по дизайну')(onclick='verification(4)')
+							//-/////////////
+							//-SECT 7
+							//-/////////////
+
+
+		section.Bg7
+			.container.wrapSec7.block
+				img.img7(src="img/Consultant.png", alt="")
+				h2.h2_7 Ваш персональний помічник
+				.wrap7
+					.l7
+						mixin block7(sp)
+							.block7
+								.icon5.icon7(class!=attributes.class)
+								span= sp
+						+block7('Заощадить ваш час на пошук шаблону')(class= 'iconImprove')
+						+block7('Обере ідеальний шаблон спеціально для вас')(class= 'iconImprove')
+						+block7('Відповість на всі питання про шаблони')(class= 'iconImprove')
+					.r7
+						+block7('Допоможе придбати обраний продукт')(class= 'iconPayment')
+						+block7('Безкоштовно замінить продукт, якщо ви передумаєте')(class= 'iconImprove')
+						+block7('Буде терплячим та доброзичливим :)')(class= 'iconLike')
+				input.inputBtn7(type="button", value="Отримати допомогу та знайти свій ідеальний шаблон")
+
+
+					//-/////////////
+					//-SECT 8
+					//-/////////////
+
+
+		section.Bg8
+			.container.wrapSec8.block
+				.txt8 Скільки коштів витрачається на створення одного шаблону для сайту?
+				.wrapCenter
+					.center
+						img(src="img/diagram.png", alt="")
+						.wrapTxt
+							.h1 $4,000
+							p середня ціна розробки <br>шаблона
+						mixin item8(h3, p)
+							.item8(class!=attributes.class)
+								h3= h3
+								p= p
+						+item8('Дослідження $400', 'Команда дослідників вивчає тенденції розвитку користувацьких інтерфейсів.')(class="item8_1")
+						+item8('Прототипування $600', 'Прототипування допомагає створити зручний та простий у використанні сайт.')(class="item8_2")
+						+item8('Дизайн $1,000', 'Наші дизайнери роблять продукт, який виглядає модно та привабливо.')(class="item8_3")
+						+item8('Front-end $1,000', 'Front-end розробники оживляють дизайн наших шаблонів.')(class="item8_4")
+						+item8('Back-end$600', 'Розробники перетворюють статичний html-код на працюючий шаблон для сайту.')(class="item8_5")
+						+item8('Забезпечення якості $400', 'Фахівці із забезпечення якості пильнують за тим, щоб продукт не містив помилок.')(class="item8_6")
+						
+		footer.container.block.wrapFooter
+			mixin itemFut (h3, arr)
+				h3.Fh3(class!=attributes.class)= h3
+				each val, index in arr
+					a.futA(href=index)= val
+			.column20
+				+itemFut('Продукти', {'#1':'Wordpress шаблони','#2':'HTML шаблони','#3':'OpenCart шаблони','#4':' Joomla шаблони','#5':'PrestaShop шаблони','#6':'WooCommerce шаблони','#7':'Конструктор сайтів ', '#8':'Magento шаблони ', '1#19':'Адаптивні шаблони', '#10':'Shopify шаблони'})(class="like")
+			.column20
+				+itemFut('Категорії', {'#1':'Wordpress шаблони','#2':'HTML шаблони','#3':'OpenCart шаблони','#4':' Joomla шаблони','#5':'PrestaShop шаблони','#6':'WooCommerce шаблони','#7':'Конструктор сайтів ', '#8':'Magento шаблони ', '1#19':'Адаптивні шаблони', '#10':'Shopify шаблони'})(class="like")
+			.column20
+				+itemFut('Компанія', {'#1':'Wordpress шаблони','#2':'HTML шаблони','#3':'OpenCart шаблони','#4':' Joomla шаблони','#5':'PrestaShop шаблони','#6':'Magento шаблони','#7':'Конструктор сайтів ', '#8':'WooCommerce шаблони '})(class="like")
+			.column40
+				.column50
+					+itemFut('Підтримка', {'#1gg':'Wordpress шаблони','#2':'HTML шаблони'})(class="like")
+				.column50
+					+itemFut('Підписатися на', {'#1hh':'Wordpress шаблони','#2':'HTML шаблони','#3':'OpenCart шаблони'})(class="like")
+				.column100
+					h3.Fh3.letter Підписатися на новини
+					p Отримувати інформацію про нові шаблони і новини дизайну.
+					.wrapInputFut
+						input.inputFut.inputTxtFut(type="text" placeholder="E-mail")
+						input.inputFut.inputBtnFut(type="button", value="Підписатися")
+
+
+
+
+script(src="http://127.0.0.1:35729/livereload.js?ext=Firefox&extver=0.0.46")
+
+script(src="script.js")
+
+script(src="slider6.js")
