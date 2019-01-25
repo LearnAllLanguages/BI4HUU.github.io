@@ -9,6 +9,7 @@ let setI = setInterval(() => next(), time);
 allSlides[0].style.zIndex = zIndex-1;
 
 for ( let i = 0; i < allSlidesLength; i++ ) {
+	allSlides[i].classList.add(`slide`);
 	allSlides[i].classList.add(`slide${i+1}`);
 	let buttonNumber = document.createElement(`div`);
 	buttonNumber.classList.add(`buttonNumber`);
