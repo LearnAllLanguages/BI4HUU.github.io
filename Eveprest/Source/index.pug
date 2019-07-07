@@ -1,18 +1,21 @@
-html
+<!DOCTYPE html>
+html(lang="en")
 	head
+		title EVEPREST
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		link(href='bootstrap.min.css' rel='stylesheet' type='text/css')
 		link(href='style.css' rel='stylesheet' type='text/css')
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		meta(charset='utf8')
 	body
 		include header
-		include service
-		include portfolio
-		include contacts
+		include thisCategory
+		include body
+		include footer
 
 
-	script
+	//- script
 	//- script(src="script.js")
 	//- script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdAxaMh5u9YZ52cVlCwN3SdC3oexO-54s&callback=initMap")
 	script(src="http://127.0.0.1:35729/livereload.js?ext=Firefox&extver=0.0.46")
 
-//- https://www.templatemonster.com/ua/demo/72222.html
+//- https://ld-prestashop.template-help.com/prestashop_15325_v1/index.php?id_category=14&controller=category&id_lang=1&live_configurator&theme=&header_layout=6&top_layout=14&home_layout=10&footer_layout=2&product_info_layout=

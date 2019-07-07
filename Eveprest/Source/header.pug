@@ -1,0 +1,57 @@
+header.container
+	.row.m20-0.d-flex.align-items-center
+		nav.d-flex.col-12.col-sm-12.col-xl-5.justify-content-center
+			.item_menu WOMEN
+				div.angle-up
+					//- img(src="", alt="")
+				div.megaMenu.d-flex
+					mixin col_megaMenu(h5t, arr)
+						.col_megaMenu
+							h5= h5t
+							hr
+							each val, index in arr
+								a.item_megaMenu(href=index)= val
+					+col_megaMenu('CLOTHING', {'#1': 'New Arrivals', '#2': 'Dresses','#3': 'Prom Dresses',  '#4': 'Maxi Dresses', '#5': 'Tops', '#6': 'Bodysuits', '#7': 'Shirts & Blouses', '#8': 'Suits & Separates'})
+					+col_megaMenu('CLOTHING', {'#1': 'New Arrivals', '#2': 'Dresses','#3': 'Prom Dresses',  '#4': 'Maxi Dresses', '#5': 'Tops', '#6': 'Bodysuits', '#7': 'Shirts & Blouses', '#8': 'Suits & Separates'})
+					+col_megaMenu('CLOTHING', {'#1': 'New Arrivals', '#2': 'Dresses','#3': 'Prom Dresses',  '#4': 'Maxi Dresses', '#5': 'Tops', '#6': 'Bodysuits', '#7': 'Shirts & Blouses', '#8': 'Suits & Separates'})
+					.col_megaMenu_img
+						img(src="img/menu-banner.jpg" alt="menu-banner")
+			.item_menu MEN
+				div.angle-up
+				div.megaMenu.d-flex
+					.col_megaMenu.pos-r
+						.wrap_megaMenuLvl2
+							.See
+								a.item_megaMenu.See(href='#') T-Shirts &amp; Vests
+									div.angle-up-right
+									div.wrap_megaMenuLvl3.col_megaMenu
+										mixin col_megaMenuNoHead(arr2)
+											each val, index in arr2
+												a.item_megaMenu(href=index)= val
+										+col_megaMenuNoHead({'#1': 'T-Shirts & Vests', '#2': 'Jumpers & Cardigans','#3': 'Hoodies & Sweats',  '#4': 'Maxi Dresses', '#5': 'Tops', '#6': 'Bodysuits', '#7': 'Shirts & Blouses', '#8': 'Suits & Separates', })
+						mixin col_megaMenuNoHead(arr2)
+							each val, index in arr2
+								a.item_megaMenu(href=index)= val
+						+col_megaMenuNoHead({'#1': 'T-Shirts & Vests', '#2': 'Jumpers & Cardigans','#3': 'Hoodies & Sweats',  '#4': 'Maxi Dresses', '#5': 'Tops', '#6': 'Bodysuits', '#7': 'Shirts & Blouses', '#8': 'Suits & Separates' })
+			.item_menu TEENS
+			.item_menu KIDS
+			.item_menu LOOKBOOK
+		.logo.d-flex.justify-content-center.col-12.col-xl-2
+			img.logo(src="img/logo.jpg", alt="EVEPREST")
+		.d-flex.col-12.col-xl-5.justify-content-center.justify-content-xl-end
+			.item_menu EN
+				div.angle-up
+				div.megaMenu
+					.item_megaMenu English
+					.item_megaMenu Русский
+					.item_megaMenu Français
+			.item_menu USD
+				div.angle-up
+				div.megaMenu
+					.item_megaMenu EUR(€)
+					.item_megaMenu USD($)
+			.item_menu.fl.icon_user
+			.item_menu.fl.icon_loop
+			.item_menu.fl.icon_love
+			.item_menu.fl.icon_shop
+

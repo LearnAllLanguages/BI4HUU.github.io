@@ -1,0 +1,26 @@
+footer.container-fluid
+	.newsletter.text-center
+		h3 NEWSLETTER
+		p Enter your email address to receive all news.
+		form(action="", method="post")
+			input(type="mail" name="mail" placeholder="Your email addres")
+			input(type="submit", value="SUBSCRIBE")
+	.container.footer_group
+		.row
+			.col-12.col-sm-12.col-xl-10
+				.row
+					.col-12.col-sm-12.col-md-3
+						h3 Information
+						mixin col_footer_group(arr4)
+							ul
+								each val in arr4
+									li= val
+						+col_footer_group( ["Delivery", "Legal Notice", "Terms and conditions of use", "About us", "Secure payment", "Pages configuration"] )
+					.col-12.col-sm-12.col-md-3
+						h3 Categories
+						+col_footer_group( ["Women", "Men", "Teens", "Kids"] )
+					.col-12.col-sm-12.col-md-3
+						h3 Your account
+						+col_footer_group( ["Personal info", "Orders", "Credit slips", "Addresses", "My wishlists"] )
+					.col-12.col-sm-12.col-md-3
+						h3 Be Social

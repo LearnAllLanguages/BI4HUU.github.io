@@ -1,0 +1,34 @@
+.container.products_body
+	.row
+		.aside.col-md-3
+			h3 Filter By
+			h5 Brand
+			.wrap_items
+				mixin col_Brand(arr3)
+					each val in arr3
+						.wrap_item
+							input.products_input(type="checkbox", name="brand")
+							a.a_brand(href=val[1])= val[0]
+							span.float-right= val[2]
+				+col_Brand([[`Anne Klein`, `#a`, `4`], [`DKNY`, `#a`, `4`], [`DOLCE&GABBANA`, `#a`, `3`], [`GIORGIO ARMANI`, `#a`, `3`], [`Michael Stars`, `#a`, `3`], [`HUGO BOSS`, `#a`, `4`], [`Scotch & Soda`, `#a`, `3`], [`Kate Spade`, `#a`, `3`], [`SOCIALE`, `#a`, `3`], [`Ltb Jeans`, `#a`, `3`]])
+			h5 Size
+			.wrap_items
+				+col_Brand([[`S`, `#`, `33`], [`M`, `#`, `22`], [`L`, `#`, `11`], [`One size`, `#`, `88`]])
+			h5 Occasions
+			.wrap_items
+				+col_Brand([[`Casual`, `#`, `33`], [`Night Out`, `#`, `22`], [`Work`, `#`, `11`]])
+			h5 Color
+			.colors.d-flex.justify-content-center
+				div(style="background: #AAB2BD")
+				div(style="background: #7D8C9C")
+				div(style="background: #f5f5dc")
+				div(style="background: #E84C3D")
+				div(style="background: #434A54")
+				div(style="background: #C19A6B")
+				div(style="background: #F39C11")
+				div(style="background: #5D9CEC")
+				div(style="background: #A0D468")
+				div(style="background: #FCCACD")
+				div(style="background: #964B00")
+				div(style="background: #5D6B3D")
+		include products

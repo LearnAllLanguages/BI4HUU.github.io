@@ -1,118 +1,162 @@
-.logo
-	margin-right 10px
-// 	margin-bottom 8px
-	h1
-		margin 0
-		color colorGray
-		font-size 40px
-		font-weight 600
-		font-family "GOST Type Bu"
-		b
-			color colorBleack
-			font-size 48px
-			
-// 		font-style normal
-// 		line-height 0.8
-// 		letter-spacing 1px
-// 		@media (min-width: 1000px)
-// 			font-size 76px
-// 		@media (min-width: 1050px)
-// 			font-size 78px
-// 		@media (min-width: 1200px)
-// 			font-size 80px
-// 	h2
-// 		margin 1px 0 0 0
-// 		font-size 14px
-// 		font-weight 600
-// 		font-style normal
-// 		line-height 1
-// 		letter-spacing 1px
-// 		@media (min-width: 1000px)
-// 			font-size 15px
-// 			margin 1px 0 0 0
-// 		@media (min-width: 1050px)
-// 			font-size 16px
-// 			margin 2px 0 0 0
-// 		@media (min-width: 1200px)
-// 			font-size 17px
-// 			margin 3px 0 0 0
-			
+// fa-regular-400.ttf
+.db
+	display block
+
+body
+	color #999
+
 header
-// 	color #ffffff
-// 	position relative
-	// background color-white
-	// background #888
-	.nav
-		display flex
-		flex-wrap no-wrap
-	nav a
-		display block
-		padding 0px 24px
-		color colorDarkGray
-		text-transform uppercase
-		font-size 16px
-		font-weight 600
-		font-style normal
-		line-height 58px
-		// color #fff
-		cursor pointer
+	align-items center
+
+nav
+	order 3
+
+.logo
+	height 40px
+
+.item_menu
+	display flex
+	position relative
+	margin-left 1.875rem
+	padding 20px 0
+	font-weight 700
+	font-size .8rem
+	font-family Arimo, sans-serif
+	white-space nowrap
+
+.item_menu:hover
+	color #000000
+	cursor pointer
+	
+.item_menu:first-child
+	margin-left 0
+
+.item_menu:hover .megaMenu
+	visibility visible
+	opacity 1
+
+.megaMenu
+	box-sizing border-box
+	visibility hidden
+	position absolute
+	opacity .2	
+	left 0
+	top 100%
+	margin-top 5px
+	// padding 30px
+	transition all .3s ease-in-out
+	background #ffffff
+	box-shadow 0px 10px 30px 0px rgba(80,80,80,0.4)
+
+.col_megaMenu
+	min-width 120px
+	h5
+		color #bbb
+		font-size 12px
+		padding 3px 70px 3px 30px
+	a
 		text-decoration none
-// 		@media (min-width: 810px)
-// 			font-size 15px
-// 			padding 0 24px
-// 		@media (min-width: 1000px)
-// 			font-size 17px
-// 			padding 0px 26px
-// 		@media (min-width: 1050px)
-// 			font-size 18px
-// 			padding 0px 28px
-// 		@media (min-width: 1200px)
-// 			font-size 20px
-// 			padding 0px 30px
-	nav a:hover
-		color colorBleack
-	// nav .active
-	// 	text-decoration underline
-	// 	color colorBleack
-		
-.burger
-	display none
-#checkbox_burder
-	display none
-// @media (max-width: 830px)
-// 	label[for='checkbox_burder']
-// 		display: flex
-// 	.burger
-// 		display flex
-// 		flex-direction column
-// 		justify-content center
-// 		align-items center
-// 		cursor pointer
-// 		width 50px
-// 		margin 18px 0
-// 		background #fff
-// 	.burger i
-// 		display block
-// 		height 2px
-// 		width 18px
-// 		margin 2px
-// 		background colorRed
-// 	// header nav a
-// 	// 	display none
-// 	.wrap_nav
-// 		display none
-// 		position absolute
-// 		top 100%
-// 		right 0
-// 		left 0
-// 		margin-left 2%
-// 		margin-right 2%
-// 		width 96%
-// 		z-index 999999
-// 	.wrap_nav a
-// 		background colorGray
-// 		border-bottom 1px solid #000
-// 		line-height 2.5
-// 	#checkbox_burder:checked + .wrap_nav
-// 		display block
-// 	
+	hr
+		margin 0 40px 0 30px
+		color #eee
+
+.col_megaMenu_img
+	height 100%
+	overflow hidden
+	
+.item_menu:hover .angle-up
+	color #000
+	transform rotate(-180deg)
+	
+.item_megaMenu:hover .angle-up-right
+	color #000
+	transform translateX(4px) rotate(-90deg)
+
+.angle-up
+	display inline-block
+	transform-origin center
+	transition all .3s ease-in-out
+	margin 0 0 0 1em
+	transform rotate(0deg)
+
+.angle-up-right
+	display inline-block
+	transform-origin center
+	transition all .3s ease-in-out
+	margin 0 0 0 1em
+	transform translateX(0px) rotate(-90deg)
+
+.angle-up:after
+	content "\F107"
+	font-family 'fa'
+
+.angle-up-right:after
+	content "\F107"
+	font-family 'fa'
+
+.icon_user:after
+	content "\E01C"
+.icon_loop:after
+	content "\E014"
+.icon_love:after
+	content "\E00B"
+.icon_shop:after
+	content "\E00A"
+	
+.fl:hover
+	color #ea917d
+	
+.item_megaMenu
+	display block
+	margin 5px 0
+	padding 3px 70px 3px 30px
+	font-weight 400
+	color #888
+	transition all .3s ease-in-out
+	box-sizing border-box
+.item_megaMenu:last-child
+	margin-bottom 30px
+.item_megaMenu:first-child
+	margin-top 30px
+.item_megaMenu:hover
+	color #ea917d
+
+
+.See:hover .wrap_megaMenuLvl3
+	visibility visible
+	opacity 1
+
+.wrap_megaMenuLvl2
+	width 100%
+
+.wrap_megaMenuLvl3
+	width 100%
+	visibility hidden
+	opacity .2
+	position absolute
+	left 99%
+	top 0
+	box-sizing border-box
+	margin-left 7px
+	background #fff
+	transition all .3s ease-in-out
+	box-shadow 0px 10px 30px 0px rgba(80,80,80,0.4)
+
+
+@media (min-width: 1200px)
+	nav
+		order 0
+// .aside
+	
+
+// .content
+
+
+
+
+
+
+
+
+
+
