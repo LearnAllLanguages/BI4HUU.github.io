@@ -39,7 +39,7 @@ function autoHover(number) {
 	allButtonNumber[number].classList.add("sliderButtonActive");
 };
 autoHover(numberBackSlide-1);
-setTimeout(() => {
+setInterval(() => {
 	slider.style.height = virtualSlideBack.clientHeight + 'px'
 }, 100);
 window.onresize = function () {
