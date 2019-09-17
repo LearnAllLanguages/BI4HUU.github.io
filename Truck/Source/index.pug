@@ -1,20 +1,26 @@
 html
 	head
-		link(href='style.css' rel='stylesheet' type='text/css')
+		title Truck
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		style
+			include ../Build/style.css
 		meta(charset='utf8')
 	body
 		include header
 		include slider
-		include block3
-		include block4
+		include about
+		include service
 		include block5
-		include block6
+		include blog
 		include block7
-		include block8
+		include contacts
 
 
 
-	script(src="script.js")
+	script
+		include ../Build/script.js
+	//- script(src="script.js")
 	script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdAxaMh5u9YZ52cVlCwN3SdC3oexO-54s&callback=initMap")
 	script(src="http://127.0.0.1:35729/livereload.js?ext=Firefox&extver=0.0.46")
 
