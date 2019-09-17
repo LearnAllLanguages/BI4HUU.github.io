@@ -1,6 +1,9 @@
 html
 	head
-		link(href='style.css' rel='stylesheet' type='text/css')
+		title Vizitka
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		style
+			include ../Build/style.css
 		meta(charset='utf8')
 	body
 		header.header.container
@@ -107,11 +110,9 @@ html
 				+nav2Block(' Magento ', ' шаблони', "img/Magento.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
 				+nav2Block(' MotoCMS ', ' шаблони', "img/MotoCMS.svg", { '#1':'Популярні', '#2':'Рекомендовані', '#3':'Бізнес', '#4':'Нерухомість', '#5':'Дизайн та фото'})
 
-
 					//- ////////////////////////
 					//- SECT 1
 					//- ////////////////////////
-
 
 		section.bg1
 			.section1.container.block
@@ -127,11 +128,9 @@ html
 					.itemCategories.img4 Спорт, туризм та подорожі
 					.itemCategories.img5 Нерухомість
 
-
 					//- ////////////////////////
 					//- SECT 2 MENU 3
 					//- ////////////////////////
-		
 
 		section.Bg2
 			.wrapSec1Head.container
@@ -140,7 +139,7 @@ html
 					mixin sect2menu3(s, i, h4, p, pc)
 						.wrapEl
 							.Nav2SubEl
-								a(href="#", title="title") 
+								a(href="#", title="title")
 									img.img5_(src=s)
 								.wrapData
 									.left2
@@ -177,7 +176,7 @@ html
 					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
 					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
 					+sect2menu3("img/img_5_2.jpg", "img/1.png", 'Tobacco2', '2Адаптивний motocms', '53 $')
-				label#ii2(for="i2") 
+				label#ii2(for="i2")
 					div.icon-tm.icon-flag Нові
 				input(type="radio" name="tabs" id="i3")
 				.sec1Sub
@@ -191,7 +190,6 @@ html
 					//- +sect2menu3("img/img_5_3.jpg", "img/1.png", 'Tobacco3', '3Адаптивний motocms', '53 $')
 				label#ii3(for="i3")
 					div.icon-tm.icon-like Багатофункціональні
-
 
 							//-/////////////
 							//-SECT 5 X3
@@ -209,11 +207,9 @@ html
 			+block5('Служба підтримки 24/7', 'Наші фахівці завжди готові допомогти вам у налаштуванні шаблону.')(class= 'iconImprove')
 			+block5('100% гарантія якості', 'Якщо ви не задоволені придбаним продуктом, ми поміняємо його на інший безкоштовно.')(class= 'iconLike')
 
-
 							//-/////////////
 							//-SECT 6
 							//-/////////////
-
 
 		section.posr
 			.wrapSlider6
@@ -255,10 +251,10 @@ html
 					+nameSlide('img/6_2.png', 'Єлизавета', 'Власник магазину')(onclick='verification(2)')
 					+nameSlide('img/6_3.png', 'Сергій K.', 'Фінансовий Консультант')(onclick='verification(3)')
 					+nameSlide('img/6_4.png', 'Максим А.', 'Агентство по дизайну')(onclick='verification(4)')
+
 							//-/////////////
 							//-SECT 7
 							//-/////////////
-
 
 		section.Bg7
 			.container.wrapSec7.block
@@ -304,7 +300,7 @@ html
 						+item8('Front-end $1,000', 'Front-end розробники оживляють дизайн наших шаблонів.')(class="item8_4")
 						+item8('Back-end$600', 'Розробники перетворюють статичний html-код на працюючий шаблон для сайту.')(class="item8_5")
 						+item8('Забезпечення якості $400', 'Фахівці із забезпечення якості пильнують за тим, щоб продукт не містив помилок.')(class="item8_6")
-						
+
 		footer.container.block.wrapFooter
 			mixin itemFut (h3, arr)
 				h3.Fh3(class!=attributes.class)= h3
@@ -328,11 +324,9 @@ html
 						input.inputFut.inputTxtFut(type="text" placeholder="E-mail")
 						input.inputFut.inputBtnFut(type="button", value="Підписатися")
 
+	script(src="http://127.0.0.1:35729/livereload.js?ext=Firefox&extver=0.0.46")
 
+	script
+		include ../Build/script.js
+		include ../Build/slider6.js
 
-
-script(src="http://127.0.0.1:35729/livereload.js?ext=Firefox&extver=0.0.46")
-
-script(src="script.js")
-
-script(src="slider6.js")
