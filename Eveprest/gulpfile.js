@@ -29,20 +29,11 @@ gulp.task('js', function(){
 		.pipe(livereload());
 });
 
-gulp.task('default', [ 'watch' ]);
 gulp.task('watch', () => {
-	// livereload({ start: true })
 	livereload.listen()
-	gulp.watch('Source/*.pug', ['html']);
-	gulp.watch('Source/*.styl', ['css']);
-	gulp.watch('Source/*.js', ['js']);
+	gulp.watch('Source/*.pug', gulp.series('html'));
+	gulp.watch('Source/*.styl', gulp.series('css', 'html'));
+	gulp.watch('Source/*.js', gulp.series('js', 'html'));
 });
 
-// var less = require('gulp-sass');
-// var minifyCSS = require('gulp-csso');
-// var concat = require('gulp-concat');
-// var sourcemaps = require('gulp-sourcemaps');
-// gulp.task('watch', function() {
-//   livereload.listen();
-//   gulp.watch('less/*.less', ['less']);
-// });
+gulp.task('default', gulp.parallel('watch', gulp.series(gulp.parallel('css', 'js'), 'html')));
