@@ -16,7 +16,7 @@ for (let i = 0; i < quantityLength; i++) {
 	let input = CE('input');
 		input.classList.add("inputSlide", "inputSlideN");
 		input.type="button";
-		input.style.background = `url("${i+1}.jpg") `;
+		input.style.background = `url("img/${i+1}.jpg") `;
 		input.style.backgroundSize = `100% 100%`;
 		input.setAttribute('onclick', `fS1(${i+1})`);
 	Id('wIN').appendChild(input);
